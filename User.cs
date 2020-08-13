@@ -8,6 +8,8 @@ namespace _1
 {
     class User
     {
+        public static long SumOfAllLogInsAllUsers { get; set; } = 0;
+
         public string Name { get; set; }
         public string Surname { get; set; }
         public string PhoneNumber { get; set; }
@@ -18,6 +20,11 @@ namespace _1
             this.Name = name;
         }
 
+        public void LogIn()
+        {
+            // logic for lig in user
+            SumOfAllLogInsAllUsers++;
+        }
 
         public void GetName(string name)
         {
@@ -72,7 +79,6 @@ namespace _1
             }
             
             Console.WriteLine($"Email użytkownika to: {email}");
-           
         }
     }
 
