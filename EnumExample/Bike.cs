@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _1
+﻿namespace EnumExample
 {
     public class Bike
     {
@@ -11,5 +7,9 @@ namespace _1
         public int Size { get; set; }
 
         public int WheelSize { get; set; }
+
+        public Crank Crank { get; set; }
+
+        public BikeTypes BikeType { get; set; }
     }
 }

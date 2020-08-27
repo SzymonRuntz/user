@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Xml;
 
-namespace _1
+namespace Main
 {
     public class User
     {

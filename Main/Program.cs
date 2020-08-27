@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Diagnostics.Contracts;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Security.Cryptography.X509Certificates;
 
-namespace _1
+namespace Main
 {
+    using EnumExample;
     using System.Collections.Generic;
     using System.Linq;
 
