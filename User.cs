@@ -6,7 +6,7 @@ using System.Xml;
 
 namespace _1
 {
-    class User
+    public class User
     {
         public static long SumOfAllLogInsAllUsers { get; set; } = 0;
 
