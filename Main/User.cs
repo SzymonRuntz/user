@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.Text;
 using System.Xml;
 
-namespace _1
+namespace Main
 {
-    class User
+    public class User
     {
         public static long SumOfAllLogInsAllUsers { get; set; } = 0;
 

@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Diagnostics.Contracts;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Security.Cryptography.X509Certificates;
 
-namespace _1
+namespace Main
 {
+    using EnumExample;
     using System.Collections.Generic;
+    using System.Linq;
 
     class Program
     {
@@ -14,6 +12,9 @@ namespace _1
         {
             #region Collections
             var bike = new Bike();
+
+            var pawel = new User("Paweł");
+            var piotr = new User("Piotr");
 
             bike.Name = "My bike";
             bike.Size = 12;
@@ -127,7 +128,48 @@ namespace _1
             user1.LogIn();
             user3.LogIn();
 
-            Console.WriteLine("Sum of all suer log ins: " +User.SumOfAllLogInsAllUsers);
+            Console.WriteLine("Sum of all suer log ins: " + User.SumOfAllLogInsAllUsers);
+
+            var rectangle = new Rectangle(5);
+            var result = rectangle.CalculateSquare();
+            Console.WriteLine($"Result of non static(object) method: {result}");
+
+            result = Rectangle.CalculateSquare(4);
+            Console.WriteLine($"Result of static method invocation: {result}");
+            #endregion
+
+            #region AnonymousTypes
+
+            var kross = new Bike();
+            var result2 = new
+            {
+                Size_a = 15,
+                Calculate = 125
+            };
+
+            var bikeList = new List<Bike>
+            {
+                new Bike
+                {
+                    Name = "Kross",
+                    Size = 15,
+                    WheelSize = 26
+                },
+                new Bike
+                {
+                    Name = "Merida",
+                    Size = 15,
+                    WheelSize = 26
+                },
+                new Bike
+                {
+                    Name = "Kross",
+                    Size = 18,
+                    WheelSize = 26
+                },
+            };
+
+            var listOfBikesSizes = bikeList.Select(x => new { x.Size });
             #endregion
         }
     }
