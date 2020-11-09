@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumExample", "EnumExample\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionMethods", "ExtensionMethods\ExtensionMethods.csproj", "{F3142A48-57AE-4A4A-B3D0-D2AC1CA7C50B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferenceAndValueTypes", "ReferenceAndValueTypes\ReferenceAndValueTypes.csproj", "{27128911-3CE3-466B-BF8C-BEF2741B4660}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReferenceAndValueTypes", "ReferenceAndValueTypes\ReferenceAndValueTypes.csproj", "{27128911-3CE3-466B-BF8C-BEF2741B4660}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance", "Inheritance\Inheritance.csproj", "{4A848AB8-5A93-4BB9-9EB4-F9B6852EB6F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{27128911-3CE3-466B-BF8C-BEF2741B4660}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27128911-3CE3-466B-BF8C-BEF2741B4660}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27128911-3CE3-466B-BF8C-BEF2741B4660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A848AB8-5A93-4BB9-9EB4-F9B6852EB6F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A848AB8-5A93-4BB9-9EB4-F9B6852EB6F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A848AB8-5A93-4BB9-9EB4-F9B6852EB6F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A848AB8-5A93-4BB9-9EB4-F9B6852EB6F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
