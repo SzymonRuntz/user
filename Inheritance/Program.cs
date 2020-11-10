@@ -62,6 +62,43 @@ namespace Inheritance
 
     //}
 
+    // Each class can inherit only one base class
+    public class Base1
+    {
+
+    }
+
+    public class Base2
+    {
+
+    }
+
+    // Uncomment to see the error
+    //public class Derived : Base1, Base2
+    //{
+
+    //}
+
+    // But you can inherit one after another
+    public class Base3
+    {
+        public string PropertyFromBase3 { get; set; } = "This is property from base 3 class";
+    }
+
+    public class Base4: Base3
+    {
+        public string PropertyFromBase4 { get; set; } = "This is property from base 4 class";
+    }
+
+    // Derived2 class inherits Base4 class and indirectly Base3 class because Base4 class inherits Base3
+    public class Derived2 : Base4
+    {
+        public void DisplayBaseClassProps()
+        {
+            Console.WriteLine($"Property from Base 3 class: {base.PropertyFromBase3}, and property from Base 4 class {base.PropertyFromBase4}");
+        }
+    }
+
     public class Program
     {
         static void Main(string[] args)
@@ -77,6 +114,9 @@ namespace Inheritance
 
             // TODO: Exercise 1
             // Create new object of Wheel and call method from a base class.
+
+            var derived = new Derived2();
+            derived.DisplayBaseClassProps();
         }
     }
 }
