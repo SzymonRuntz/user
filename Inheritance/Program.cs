@@ -31,6 +31,22 @@ namespace Inheritance
     // Create a derived class Wheels which will inherits from Parts and
     // add 2 new properties: Weight and Size
 
+    // The sealed Keyword
+    // If you don't want other classes to inherit from a class, use the sealed keyword:
+    sealed class SealedBike
+    {
+        // declaring protected members in sealed class is the same as declaring it as private.
+        protected string brand;
+    }
+
+    // If you try to access a sealed class, C# will generate an error:
+    // Cannot inherit from sealed class 'SealedBike'
+    // Uncomment below to see error.
+    //public class FailedMtb : SealedBike
+    //{
+
+    //}
+
     public class Program
     {
         static void Main(string[] args)
