@@ -6,10 +6,10 @@ namespace Inheritance
     // Derived Class(child) - the class that inherits from another class
     // Base Class(parent) - the class being inherited from
     // To inherit from a class, use the : symbol.
-    
     public class Bike  // base class (parent) 
     {
         public string brand = "Giant";  // Bike field
+
         public void Ride()             // Vehicle method 
         {
             Console.WriteLine("Wow, I'm riding!");
@@ -20,6 +20,16 @@ namespace Inheritance
     {
         public string modelName = "Anthem";  // MTB field
     }
+
+    // TODO: Exercise 1
+    // Create the base class for Parts with 2 properties: Price and Name,
+    // constructor to set those properties
+    // and one method AddToBasket which will simply print to the console
+    // "{Name} with cost: {Price} was added to the basket!"
+
+    // TODO: Exercise 1
+    // Create a derived class Wheels which will inherits from Parts and
+    // add 2 new properties: Weight and Size
 
     public class Program
     {
@@ -33,6 +43,9 @@ namespace Inheritance
 
             // Display the value of the brand field (from the Bike class) and the value of the modelName from the Mtb class
             Console.WriteLine(myMtb.brand + " " + myMtb.modelName);
+
+            // TODO: Exercise 1
+            // Create new object of Wheel and call method from a base class.
         }
     }
 }
