@@ -8,6 +8,9 @@ namespace Inheritance
     // To inherit from a class, use the : symbol.
     public class Bike  // base class (parent) 
     {
+        // TODO: Exercise 2
+        // change access modificator to protected and check if it will be still accessed from derived class
+        // do the same thing with private modificator
         public string brand = "Giant";  // Bike field
 
         public void Ride()             // Vehicle method 
