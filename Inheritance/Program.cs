@@ -8,6 +8,12 @@ namespace Inheritance
     // To inherit from a class, use the : symbol.
     public class Bike  // base class (parent) 
     {
+        public Bike(string brand)
+        {
+            this.brand = brand;
+            Console.WriteLine("Hello from Bike constructor!");
+        }
+
         // TODO: Exercise 2
         // change access modificator to protected and check if it will be still accessed from derived class
         // do the same thing with private modificator
@@ -21,6 +27,12 @@ namespace Inheritance
 
     public class Mtb : Bike  // derived class (child) which inherits from Bike class (parent)
     {
+        public Mtb(string brand, string modelName): base(brand)
+        {
+            this.modelName = modelName;
+            Console.WriteLine("Hello from Mtb constructor!");
+        }
+
         public string modelName = "Anthem";  // MTB field
     }
 
@@ -55,7 +67,7 @@ namespace Inheritance
         static void Main(string[] args)
         {
             // Create a myMtb object
-            Mtb myMtb = new Mtb();
+            Mtb myMtb = new Mtb("Merida", "ONE-TWENTY");
 
             // Call the Ride() method (From the Bike class) on the myMtb object
             myMtb.Ride();
