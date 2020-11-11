@@ -1,6 +1,7 @@
 ﻿namespace ReferenceAndValueTypes
 {
     using System;
+    using System.Runtime.CompilerServices;
 
     class Program
     {
@@ -56,7 +57,12 @@
             MyClass myClass2 = new MyClass();
             //czyli działa to jeszcze na tablice itd. bede musiał to ogarnąć z tablicami (nigdy za nimi nie przepadałem..)
 
+            var array = new[]
+            {
+                5, 6, 6
+            };
 
+            var updatedArray = Update(array);
 
             // reference type inherits directly from System.Object
             var myClass = new MyClass();
@@ -64,6 +70,7 @@
             //nie łapie do końca {get}; {set};
             //często się z tym spotykałem bo "to musi był" ale dlaczego ? Oto jest pytanie
             Console.WriteLine($"myClass.MyProp = {myClass.MyProp}  <- to jest oczywiste");
+
             // reference types holds only a reference to real object in variable
             // so here we copy the reference to 'myClass' object.
             // Now these two variables: 'mySecondClass' and 'myClass points to the
@@ -71,6 +78,7 @@
             var mySecondClass = myClass; 
             // przypisuje "Initial value" do mySecondClass = "Initial value" ?
             // chyba nie, bo nie przypisuje Propertki tylko tak jakby sam obiekt, który jest tym samym co myClass.
+            // Odp: Do zmiennej mySecondClass przypisuje to co znajduje się w zmiennej myClass, czyli referencja/pointer/wskaźnik
 
             // Now we update value of 'MyProp' of object which 'mySecondClass' point to.
             // It is the same object which 'myClass' points to.
@@ -109,6 +117,19 @@
             //However, we cannot use var and assign the value to null.
             //Uncomment the below line to get a compilation error.
             //var myValue = null;
+        }
+
+        public static int[] Update(int[] array)
+        {
+            var updatedArray = new int[array.Length];
+            // increase each array element by 1
+            for (int i = 0; i < array.Length; i++)
+            {
+                updatedArray[i] = array[i] + 1;
+                //array[i]=array[i]+1;
+            }
+
+            return updatedArray;
         }
 
         public static int Update(int someNumber)
