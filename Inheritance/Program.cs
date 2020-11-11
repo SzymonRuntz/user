@@ -97,6 +97,9 @@ namespace Inheritance
         {
             Console.WriteLine($"Property from Base 3 class: {base.PropertyFromBase3}, and property from Base 4 class {base.PropertyFromBase4}");
         }
+    public class Gravel : Bike
+    {
+        public string modelName = "Silex";
     }
 
     public class Program
@@ -104,9 +107,12 @@ namespace Inheritance
         static void Main(string[] args)
         {
             // Create a myMtb object
+            Mtb myMtb = new Mtb();
+            Gravel myGravel = new Gravel();
             Mtb myMtb = new Mtb("Merida", "ONE-TWENTY");
 
             // Call the Ride() method (From the Bike class) on the myMtb object
+            myGravel.Ride();
             myMtb.Ride();
 
             // Display the value of the brand field (from the Bike class) and the value of the modelName from the Mtb class
