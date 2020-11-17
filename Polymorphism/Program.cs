@@ -45,9 +45,11 @@ namespace Polymorphism
         // If derived class defines same method as defined in its base class, it is known as method overriding in C#.
         // It is used to achieve runtime(dynamic) polymorphism. 
         // It enables you to provide specific implementation of the method which is already provided by its base class.
+
+        // To perform method overriding in C#, you need to use 'virtual' keyword with base class method and 'override' keyword with derived class method.
         class Animal  // Base class (parent) 
         {
-            public void animalSound()
+            public virtual void animalSound()
             {
                 Console.WriteLine("The animal makes a sound");
             }
@@ -55,7 +57,7 @@ namespace Polymorphism
 
         class Pig : Animal  // Derived class (child) 
         {
-            public void animalSound()
+            public override void animalSound()
             {
                 Console.WriteLine("The pig says: wee wee");
             }
@@ -63,9 +65,17 @@ namespace Polymorphism
 
         class Dog : Animal  // Derived class (child) 
         {
-            public void animalSound()
+            public override void animalSound()
             {
                 Console.WriteLine("The dog says: bow wow");
+            }
+        }
+
+        class Cat : Animal  // Derived class (child) 
+        {
+            public void animalSound()
+            {
+                Console.WriteLine("The cat says: meow meow");
             }
         }
 
@@ -82,10 +92,12 @@ namespace Polymorphism
             Animal myAnimal = new Animal();  // Create a Animal object
             Animal myPig = new Pig();  // Create a Pig object
             Animal myDog = new Dog();  // Create a Dog object
+            Animal myCat = new Cat();  // Create a Dog object
 
             myAnimal.animalSound();
             myPig.animalSound();
             myDog.animalSound();
+            myCat.animalSound();
         }
     }
 }
