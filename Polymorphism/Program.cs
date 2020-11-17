@@ -27,11 +27,13 @@ namespace Polymorphism
             {
                 return a + b;
             }
+
             // different from the first method by number of parameters
             public static int add(int a, int b, int c)
             {
                 return a + b + c;
             }
+
             // different from the first method by types of parameters
             public static float add(float a, float b)
             {
@@ -39,12 +41,51 @@ namespace Polymorphism
             }
         }
 
+        // Dynamic Polymorphism - Method Overriding
+        // If derived class defines same method as defined in its base class, it is known as method overriding in C#.
+        // It is used to achieve runtime(dynamic) polymorphism. 
+        // It enables you to provide specific implementation of the method which is already provided by its base class.
+        class Animal  // Base class (parent) 
+        {
+            public void animalSound()
+            {
+                Console.WriteLine("The animal makes a sound");
+            }
+        }
+
+        class Pig : Animal  // Derived class (child) 
+        {
+            public void animalSound()
+            {
+                Console.WriteLine("The pig says: wee wee");
+            }
+        }
+
+        class Dog : Animal  // Derived class (child) 
+        {
+            public void animalSound()
+            {
+                Console.WriteLine("The dog says: bow wow");
+            }
+        }
+
 
         static void Main(string[] args)
         {
-            Console.WriteLine(Calc.add(12, 23));
-            Console.WriteLine(Calc.add(12, 23, 25));
-            Console.WriteLine(Calc.add(12.4f, 21.3f));
+            // Static Polymorphism
+            //Console.WriteLine(Calc.add(12, 23));
+            //Console.WriteLine(Calc.add(12, 23, 25));
+            //Console.WriteLine(Calc.add(12.4f, 21.3f));
+
+
+            // Dynamic Polymorphism
+            Animal myAnimal = new Animal();  // Create a Animal object
+            Animal myPig = new Pig();  // Create a Pig object
+            Animal myDog = new Dog();  // Create a Dog object
+
+            myAnimal.animalSound();
+            myPig.animalSound();
+            myDog.animalSound();
         }
     }
 }
