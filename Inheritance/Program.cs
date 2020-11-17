@@ -27,13 +27,13 @@ namespace Inheritance
 
     public class Mtb : Bike  // derived class (child) which inherits from Bike class (parent)
     {
-        public Mtb(string brand, string modelName): base(brand)
+        public Mtb(string brand, string modelName) : base(brand)
         {
-            this.modelName = modelName;
+            this.ModelName = modelName;
             Console.WriteLine("Hello from Mtb constructor!");
         }
 
-        public string modelName = "Anthem";  // MTB field
+        public string ModelName { get; }  // MTB field
     }
 
     // TODO: Exercise 1
@@ -85,7 +85,7 @@ namespace Inheritance
         public string PropertyFromBase3 { get; set; } = "This is property from base 3 class";
     }
 
-    public class Base4: Base3
+    public class Base4 : Base3
     {
         public string PropertyFromBase4 { get; set; } = "This is property from base 4 class";
     }
@@ -97,32 +97,36 @@ namespace Inheritance
         {
             Console.WriteLine($"Property from Base 3 class: {base.PropertyFromBase3}, and property from Base 4 class {base.PropertyFromBase4}");
         }
-    public class Gravel : Bike
-    {
-        public string modelName = "Silex";
-    }
-
-    public class Program
-    {
-        static void Main(string[] args)
+        public class Gravel : Bike
         {
-            // Create a myMtb object
-            Mtb myMtb = new Mtb();
-            Gravel myGravel = new Gravel();
-            Mtb myMtb = new Mtb("Merida", "ONE-TWENTY");
+            public Gravel(string brand) : base(brand)
+            {
 
-            // Call the Ride() method (From the Bike class) on the myMtb object
-            myGravel.Ride();
-            myMtb.Ride();
+            }
+            public string modelName = "Silex";
+        }
 
-            // Display the value of the brand field (from the Bike class) and the value of the modelName from the Mtb class
-            Console.WriteLine(myMtb.brand + " " + myMtb.modelName);
+        public class Program
+        {
+            static void Main(string[] args)
+            {
+                // Create a myMtb object
 
-            // TODO: Exercise 1
-            // Create new object of Wheel and call method from a base class.
+                Gravel myGravel = new Gravel("Kross");
+                Mtb myMtb = new Mtb("Merida", "ONE-TWENTY");
 
-            var derived = new Derived2();
-            derived.DisplayBaseClassProps();
+                // Call the Ride() method (From the Bike class) on the myMtb object
+                myGravel.Ride();
+                myMtb.Ride();
+                // Display the value of the brand field (from the Bike class) and the value of the modelName from the Mtb class
+                Console.WriteLine(myMtb.brand + " " + myMtb.ModelName);
+                Console.WriteLine(myGravel.brand + " " + myGravel.modelName);
+                // TODO: Exercise 1
+                // Create new object of Wheel and call method from a base class.
+
+                var derived = new Derived2();
+                derived.DisplayBaseClassProps();
+            }
         }
     }
 }
