@@ -53,9 +53,9 @@ namespace Exceptions
 
                 CallOtherMethod(); //Never invoked
             }
-            catch (Exception ex)
+            catch (DivideByZeroException)
             {
-                Console.WriteLine($"Exception occured: {ex}");
+                Console.WriteLine($"You can't divide by 0");
             }
         }
         #endregion
@@ -82,7 +82,7 @@ namespace Exceptions
             }
             catch (Exception ex)
             {
-                //Swallowing exceptions is a bad practice!
+                //Swallowing exceptions is a bad practice!    <- tutaj powinno być log'owanie błędu
             }
         }
         #endregion
@@ -98,7 +98,7 @@ namespace Exceptions
                 //throw new DivideByZeroException();
                 //throw new ArgumentException();
                 //throw new Exception();
-                //throw new NullReferenceException();
+                throw new NullReferenceException();
             }
             catch (DivideByZeroException ex)
             {
@@ -146,7 +146,7 @@ namespace Exceptions
             FileStream file = null;
             try
             {
-                var fileInfo = new FileInfo("C:\\path\\to\\file.txt");
+                var fileInfo = new FileInfo("C:\\Users\\szymo\\source\\repos\\user\\file.txt");
 
                 file = fileInfo.OpenWrite();
                 file.WriteByte(0xF);
@@ -226,7 +226,7 @@ namespace Exceptions
             catch (Exception ex)
             {
                 //Handle the exception
-                throw;
+                throw;   // przerzucenie odpowiedzialności za błąd "wyżej"
             }
         }
 
@@ -254,7 +254,7 @@ namespace Exceptions
         static void Main(string[] args)
         {
             // 1. Excpetions
-            ThrowsExcpetionExample();
+            //ThrowsExcpetionExample();
 
             // 2. Understanding Exceptions
             //LogsExcpetionExample();
@@ -276,8 +276,17 @@ namespace Exceptions
             //CustomExceptionExample();
 
             // 8. Re-Throwing Exceptions
-            //ReThrowWithStackTraceExample();
-            //ReThrowAndResetStackTraceExample();
+            try
+            {
+                //ReThrowWithStackTraceExample();  
+                ReThrowAndResetStackTraceExample();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex}");
+            }
+           
+            
         }
 
         private static void CallOtherMethod()
